@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DbTables</key>
+	<array>
+		<string>CREATE TABLE if not exists T_USERS (USERNAME VARCHAR(50),USERID VARCHAR(50),DEPARTMENT VARCHAR(100),CJSJ VARCHAR(30));</string>
+		<string>CREATE TABLE if not exists T_MSG_RECORD ( LOGINUSER VARCHAR(50),TALKUSER VARCHAR(50),MSG VARCHAR(500),CJSJ VARCHAR(30));</string>
+		<string>CREATE TABLE if not exists T_EXCEPTION_RECORD ( ID VARCHAR(50),USERID VARCHAR(50),SOFTINFO VARCHAR(200),SBBH VARCHAR(50),EXCEPTION VARCHAR(500),CJSJ VARCHAR(30),STATUS INTEGER);</string>
+		<string>CREATE TABLE  if not exists  T_ADMIN_RMS_YH(YHID VARCHAR(50) PRIMARY KEY,YHMC VARCHAR(100) NULL,YHZW VARCHAR(50) NULL,YHSJ VARCHAR(50) NULL,BGDH VARCHAR(50) NULL,PYJX VARCHAR(50) NULL,BMBH VARCHAR(50) NULL,XB VARCHAR(2) NULL,SFYX VARCHAR(10) NULL,SFZG VARCHAR(10) NULL,PXH  integer NULL,ORGID VARCHAR(50) NULL,YHBJ VARCHAR(50) NULL,CJSJ  VARCHAR(50) NULL,XGSJ  VARCHAR(50) NULL,ZDYS VARCHAR(50) NULL,YHJB VARCHAR(50) NULL,YHCW VARCHAR(50) NULL,HBID VARCHAR(20) NULL,TP VARCHAR(10) NULL,SFLD VARCHAR(50) NULL)</string>
+		<string>CREATE TABLE   if not exists T_ADMIN_RMS_ZZJG(ZZBH VARCHAR(50) NOT NULL,ZZJC VARCHAR(500) NULL,ZZQC VARCHAR(500) NULL,ZZDH VARCHAR(50) NULL,SJZZXH VARCHAR(50) NULL,PXH integer NULL,PYJX VARCHAR(50) NULL,CJSJ  VARCHAR(50) NULL,XGSJ  VARCHAR(50) NULL,LXDH VARCHAR(50) NULL)</string>
+		<string>CREATE TABLE   if not exists T_OPERATE_LOG(USERID VARCHAR(50) NOT NULL,WEBSERVICE VARCHAR(50) NULL,CJSJ  VARCHAR(50) NULL)</string>
+		<string>CREATE TABLE  if not exists  T_ADMIN_RMS_YH_TEMP(YHID VARCHAR(50) NOT NULL,YHMC VARCHAR(100) NULL,YHZW VARCHAR(50) NULL,YHSJ VARCHAR(50) NULL,BGDH VARCHAR(50) NULL,PYJX VARCHAR(50) NULL,BMBH VARCHAR(50) NULL,XB VARCHAR(2) NULL,SFYX VARCHAR(10) NULL,SFZG VARCHAR(10) NULL,PXH  integer NULL,ORGID VARCHAR(50) NULL,YHBJ VARCHAR(50) NULL,CJSJ  VARCHAR(50) NULL,XGSJ  VARCHAR(50) NULL,ZDYS VARCHAR(50) NULL,YHJB VARCHAR(50) NULL,YHCW VARCHAR(50) NULL,HBID VARCHAR(20) NULL,TP VARCHAR(10) NULL,SFLD VARCHAR(50) NULL)</string>
+		<string>CREATE TABLE   if not exists T_ADMIN_RMS_ZZJG_TEMP(ZZBH VARCHAR(50) NOT NULL,ZZJC VARCHAR(500) NULL,ZZQC VARCHAR(500) NULL,ZZDH VARCHAR(50) NULL,SJZZXH VARCHAR(50) NULL,PXH integer NULL,PYJX VARCHAR(50) NULL,CJSJ  VARCHAR(50) NULL,XGSJ  VARCHAR(50) NULL,LXDH VARCHAR(50) NULL)</string>
+		<string>CREATE TABLE if not exists T_USER_LOCATION( _ID INTEGER PRIMARY KEY AUTOINCREMENT,USERID VARCHAR(50) NOT NULL,LAT VARCHAR(50) NULL,LON VARCHAR(50) NULL,CREATETIME VARCHAR(50) NULL)</string>
+	</array>
+	<key>InitialDatas</key>
+	<array/>
+	<key>DBName</key>
+	<string>boandaProject.db</string>
+	<key>MenuItems</key>
+	<array>
+		<dict>
+			<key>PageTitle</key>
+			<string>移动办公</string>
+			<key>Menus</key>
+			<array>
+				<dict>
+					<key>MenuTitle</key>
+					<string>待办任务(局)</string>
+					<key>MenuIcon</key>
+					<string>icon_dbrw_j.png</string>
+					<key>ViewController</key>
+					<string>BanLiController</string>
+					<key>NibName</key>
+					<string>TodoListViewController</string>
+				</dict>
+				<dict>
+					<key>MenuTitle</key>
+					<string>已办任务(局)</string>
+					<key>MenuIcon</key>
+					<string>icon_ybrw_j.png</string>
+					<key>ViewController</key>
+					<string>HaveDoneSearchController</string>
+					<key>NibName</key>
+					<string>HaveDoneSearchController</string>
+				</dict>
+				<dict>
+					<key>MenuTitle</key>
+					<string>待办任务(厅)</string>
+					<key>MenuIcon</key>
+					<string>icon_dbrw_t.png</string>
+					<key>ViewController</key>
+					<string>TingBanLiController</string>
+					<key>NibName</key>
+					<string>TingBanLiController</string>
+				</dict>
+				<dict>
+					<key>MenuTitle</key>
+					<string>已办任务(厅)</string>
+					<key>MenuIcon</key>
+					<string>icon_ybrw_t.png</string>
+					<key>ViewController</key>
+					<string>TingHaveDoneSearchController</string>
+					<key>NibName</key>
+					<string>TingHaveDoneSearchController</string>
+					<key>New item</key>
+					<string></string>
+				</dict>
+				<dict>
+					<key>MenuTitle</key>
+					<string>来文查询(局)</string>
+					<key>MenuIcon</key>
+					<string>icon_lwcx_j.png</string>
+					<key>ViewController</key>
+					<string>LaiWenChaXunController</string>
+					<key>NibName</key>
+					<string>LaiWenChaXunController</string>
+				</dict>
+				<dict>
+					<key>MenuTitle</key>
+					<string>来文查询(厅)</string>
+					<key>MenuIcon</key>
+					<string>icon_lwcx_t.png</string>
+					<key>ViewController</key>
+					<string>TingLaiWenChaXunController</string>
+					<key>NibName</key>
+					<string>TingLaiWenChaXunController</string>
+				</dict>
+				<dict>
+					<key>MenuTitle</key>
+					<string>发文查询(局)</string>
+					<key>MenuIcon</key>
+					<string>icon_fwcx_j.png</string>
+					<key>ViewController</key>
+					<string>FaWenChaXunController</string>
+					<key>NibName</key>
+					<string>FaWenChaXunController</string>
+				</dict>
+				<dict>
+					<key>MenuTitle</key>
+					<string>发文查询(厅)</string>
+					<key>MenuIcon</key>
+					<string>icon_fwcx_t.png</string>
+					<key>ViewController</key>
+					<string>TingFaWenChaXunController</string>
+					<key>NibName</key>
+					<string>TingFaWenChaXunController</string>
+				</dict>
+				<dict>
+					<key>MenuTitle</key>
+					<string>  内部事项查询  (局)</string>
+					<key>MenuIcon</key>
+					<string>icon_nbsxcx_j.png</string>
+					<key>ViewController</key>
+					<string>CasesinsideSearchViewController</string>
+					<key>NibName</key>
+					<string>CasesinsideSearchViewController</string>
+				</dict>
+				<dict>
+					<key>MenuTitle</key>
+					<string>  内部事项查询  (厅)</string>
+					<key>MenuIcon</key>
+					<string>icon_nbsxcx_t.png</string>
+					<key>ViewController</key>
+					<string>TingCasesinsideSearchViewController</string>
+					<key>NibName</key>
+					<string>TingCasesinsideSearchViewController</string>
+				</dict>
+				<dict>
+					<key>MenuTitle</key>
+					<string>内部邮件</string>
+					<key>MenuIcon</key>
+					<string>icon_nbyj.png</string>
+					<key>ViewController</key>
+					<string>TingYouJianGuanLiController</string>
+					<key>NibName</key>
+					<string>TingYouJianGuanLiController</string>
+				</dict>
+				<dict>
+					<key>MenuTitle</key>
+					<string>通知公告(局)</string>
+					<key>MenuIcon</key>
+					<string>icon_tzgg_j.png</string>
+					<key>ViewController</key>
+					<string>TongZhiGongGaoController</string>
+					<key>NibName</key>
+					<string>TongZhiGongGaoController</string>
+				</dict>
+				<dict>
+					<key>MenuTitle</key>
+					<string>通知公告(厅)</string>
+					<key>MenuIcon</key>
+					<string>icon_tzgg_t.png</string>
+					<key>ViewController</key>
+					<string>TingTongZhiGongGaoController</string>
+					<key>NibName</key>
+					<string>TingTongZhiGongGaoController</string>
+				</dict>
+				<dict>
+					<key>MenuTitle</key>
+					<string>日程管理</string>
+					<key>MenuIcon</key>
+					<string>icon_ldrc.png</string>
+					<key>ViewController</key>
+					<string>LinDaoRiChenController</string>
+					<key>NibName</key>
+					<string>LinDaoRiChenController</string>
+				</dict>
+				<dict>
+					<key>MenuTitle</key>
+					<string>我的文件</string>
+					<key>MenuIcon</key>
+					<string>icon_wdwj.png</string>
+					<key>ViewController</key>
+					<string>MyFileViewController</string>
+					<key>NibName</key>
+					<string></string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>
